@@ -1,12 +1,14 @@
 <p>NgFor and NgSwitch</p>
 
 <ul *ngFor="let country of peopleByCountry" [ngSwitch]="country.country">
-    <h3 *ngSwitchCase="'UK'" style="color: red;">{{ country.country }}</h3>
-    <h3 *ngSwitchCase="'US'" style="color: blue;">{{ country.country }}</h3>
-    <h3 *ngSwitchCase="'MARS'" style="color: yellow;">{{ country.country }}</h3>
-    <h3 *ngSwitchDefault style="color: black;">{{ country.country }}</h3>
-    <li *ngFor="let person of country.people">
-    {{ person.name }}
+    <li>
+        <h3 *ngSwitchCase="'UK'" style="color: red;">{{ country.country }}</h3>
+        <h3 *ngSwitchCase="'US'" style="color: blue;">{{ country.country }}</h3>
+        <h3 *ngSwitchCase="'MARS'" style="color: yellow;">{{ country.country }}</h3>
+        <h3 *ngSwitchDefault style="color: black;">{{ country.country }}</h3>
+        <ul *ngFor="let person of country.people">
+            <li>{{ person.name }}</li>
+        </ul>
     </li>
 </ul>
   
